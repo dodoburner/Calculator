@@ -37,9 +37,9 @@ let arrayOp= ['+','-','*','/']
 
 numbers.forEach(number => number.addEventListener('click', e => {
   for (let i=0; i<arrayOp.length; i++) {
-    if (display.textContent.trim() == arrayOp[i]) {
+    if (display.textContent == arrayOp[i]) {
       display.textContent = '';
-    } break
+    } 
   }
 
   display.textContent += number.textContent
@@ -58,5 +58,6 @@ operators.forEach(operator => operator.addEventListener('click', e => {
 
 let equals= document.querySelector('#equals');
 equals.addEventListener('click', e => {
-
+  values.push(displayValue)
+  display.textContent=operate(opeRator, values)
 })
