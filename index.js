@@ -60,10 +60,13 @@ let equals= document.querySelector('#equals');
 equals.addEventListener('click', e => {
   values.push(displayValue)
   display.textContent=operate(opeRator, values)
-  values= []
+  values= [];
+  displayValue=parseInt(display.textContent);
+  
 })
 
 let clear= document.querySelector('#clear');
 clear.addEventListener('click', e => {
   display.textContent=''
 })
+
