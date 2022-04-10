@@ -38,3 +38,14 @@ numbers.forEach(number => number.addEventListener('click', e => {
   display.textContent += number.textContent
   displayValue= display.textContent
 }))
+
+let operators= document.querySelectorAll('.operator');
+let values= [];
+let opeRator;
+
+operators.forEach(operator => operator.addEventListener('click', e => {
+  values.push(displayValue)
+  display.textContent = operator.textContent
+  opeRator = operator.textContent
+}))
+
