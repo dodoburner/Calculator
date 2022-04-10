@@ -1,0 +1,43 @@
+#calculator {
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+#display {
+  height: 100px;
+  font-size: 32px;
+  display: flex;
+  align-items: flex-end;
+}
+
+#bottom {
+  height: 400px;
+  display: flex;
+}
+
+#numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 400px;
+  
+}
+
+#buttons {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  
+ 
+}
+
+.operator {
+  height: 75px;
+}
+
+#equals, #clear {
+  height: 50px;
+}
