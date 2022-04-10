@@ -43,7 +43,7 @@ numbers.forEach(number => number.addEventListener('click', e => {
   }
 
   display.textContent += number.textContent
-  displayValue= display.textContent
+  displayValue= parseInt(display.textContent)
 }))
 
 let operators= document.querySelectorAll('.operator');
@@ -60,4 +60,10 @@ let equals= document.querySelector('#equals');
 equals.addEventListener('click', e => {
   values.push(displayValue)
   display.textContent=operate(opeRator, values)
+  values= []
+})
+
+let clear= document.querySelector('#clear');
+clear.addEventListener('click', e => {
+  display.textContent=''
 })
