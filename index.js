@@ -33,8 +33,15 @@ function operate(operator, numbers) {
 let display= document.querySelector('#display');
 let numbers= document.querySelectorAll('.number');
 let displayValue;
+let arrayOp= ['+','-','*','/']
 
 numbers.forEach(number => number.addEventListener('click', e => {
+  for (let i=0; i<arrayOp.length; i++) {
+    if (display.textContent.trim() == arrayOp[i]) {
+      display.textContent = '';
+    } break
+  }
+
   display.textContent += number.textContent
   displayValue= display.textContent
 }))
@@ -49,3 +56,7 @@ operators.forEach(operator => operator.addEventListener('click', e => {
   opeRator = operator.textContent
 }))
 
+let equals= document.querySelector('#equals');
+equals.addEventListener('click', e => {
+
+})
