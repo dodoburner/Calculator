@@ -52,7 +52,7 @@ numbers.forEach(number => number.addEventListener('click', e => {
   if (result != undefined ) {
     values.push(result)
   }
-  displayValue= parseInt(display.textContent)
+  displayValue= parseFloat(display.textContent)
   
 }))
 
