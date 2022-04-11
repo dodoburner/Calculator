@@ -52,7 +52,7 @@ button {
 }
 
 
-.number {
+.number, #float {
   font-size: 30px;
   background-color: rgb(225, 190, 146);
 }

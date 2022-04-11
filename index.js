@@ -53,8 +53,17 @@ numbers.forEach(number => number.addEventListener('click', e => {
     values.push(result)
   }
   displayValue= parseFloat(display.textContent)
-  
 }))
+
+let float= document.querySelector('#float')
+float.addEventListener('click', e => {
+  if (display.textContent.includes('.')) {
+    e.stopPropagation
+  } else {
+    display.textContent += float.textContent
+  }
+})
+
 
 let operators= document.querySelectorAll('.operator');
 let values= [];
