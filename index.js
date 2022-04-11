@@ -33,17 +33,27 @@ function operate(operator, numbers) {
 let display= document.querySelector('#display');
 let numbers= document.querySelectorAll('.number');
 let displayValue;
-let arrayOp= ['+','-','*','/']
+let arrayOp= ['+','-','*','/'];
+let displayArray;
+let result;
 
 numbers.forEach(number => number.addEventListener('click', e => {
+  displayArray= Array.from(display.textContent);
   for (let i=0; i<arrayOp.length; i++) {
-    if (display.textContent == arrayOp[i]) {
+    if (displayArray[0] == arrayOp[i]) {
       display.textContent = '';
     } 
   }
 
   display.textContent += number.textContent
+  if (values.length == 2 ) {
+    values=[]
+  }
+  if (result != undefined ) {
+    values.push(result)
+  }
   displayValue= parseInt(display.textContent)
+  
 }))
 
 let operators= document.querySelectorAll('.operator');
@@ -52,21 +62,41 @@ let opeRator;
 
 operators.forEach(operator => operator.addEventListener('click', e => {
   values.push(displayValue)
-  display.textContent = operator.textContent
-  opeRator = operator.textContent
+  if (values.length == 3) {
+    values.shift()
+  }
+  result= operate(opeRator, values)
+  opeRator= operator.textContent
+  if (result == undefined) {
+    display.textContent = operator.textContent + displayValue
+  } else {
+    display.textContent = operator.textContent + result
+  }
+ 
+    displayArray= Array.from(display.textContent);
+   
 }))
 
 let equals= document.querySelector('#equals');
 equals.addEventListener('click', e => {
   values.push(displayValue)
-  display.textContent=operate(opeRator, values)
-  values= [];
-  displayValue=parseInt(display.textContent);
+  if (values.length == 3) {
+    values.shift()
+  }
+  result= operate(opeRator, values)
+  display.textContent=result
+  values=[];
+  displayValue= result
+  
   
 })
 
 let clear= document.querySelector('#clear');
 clear.addEventListener('click', e => {
   display.textContent=''
+  values= [];
+  result = undefined;
+  opeRator = undefined
+  
 })
 
