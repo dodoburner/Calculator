@@ -70,9 +70,12 @@ operators.forEach(operator => operator.addEventListener('click', e => {
   if (result == undefined) {
     display.textContent = operator.textContent + displayValue
   } else {
-    display.textContent = operator.textContent + result
+    display.textContent = operator.textContent + Math.round(result * 100000) / 100000
   }
  
+  if (displayValue == undefined) {
+    display.textContent = operator.textContent
+  }
     displayArray= Array.from(display.textContent);
    
 }))
@@ -84,7 +87,7 @@ equals.addEventListener('click', e => {
     values.shift()
   }
   result= operate(opeRator, values)
-  display.textContent=result
+  display.textContent= Math.round(result * 100000) / 100000
   values=[];
   displayValue= result
   
@@ -97,6 +100,7 @@ clear.addEventListener('click', e => {
   values= [];
   result = undefined;
   opeRator = undefined
+  displayValue = undefined;
   
 })
 
