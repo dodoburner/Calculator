@@ -53,6 +53,7 @@ numbers.forEach(number => number.addEventListener('click', e => {
     values.push(result)
   }
   displayValue= parseFloat(display.textContent)
+  
 }))
 
 let float= document.querySelector('#float')

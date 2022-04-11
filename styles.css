@@ -57,6 +57,8 @@ button {
   background-color: rgb(225, 190, 146);
 }
 
+
+
 .number:nth-last-child(2) {
   grid-column:span 2
 }
